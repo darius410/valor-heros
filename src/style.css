@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8";
 @font-face {
   font-family: "Baloo 2";
   font-style: normal;
@@ -12,16 +12,17 @@
   font-weight: 500;
   src: local("Baloo 2 Medium"), local("Baloo-2-Medium"), url("../../fonts/baloo-2-v1-latin-500.woff2") format("woff2");
   font-display: swap;
-}
+} */
 :root {
   --color-primary: #3a00ff;
   --color-primary-alt: #6f6ffd;
   --color-secondary: #d42257;
-  --color-background: #d2fbf7;
+  --color-background: #000000;
   --color-text: #412d86;
   --color-light: #fff;
   --color-anchor: #3a00ff;
   --font-family: "Baloo 2", sans-serif;
+  --font-family-secondary:"Bebas Neue", sans-serif; 
   --font-weight-strong: 500;
   --font-size-h1: 6rem;
   --font-size-h2: 3rem;
@@ -258,24 +259,26 @@ article,
 }
 
 header {
-  --logomark-height: 3em;
+  --logomark-height:3em;
   --logomark-padding: 0 1em;
+  background:url(/public/ink-cloud-dark-water.jpg)no-repeat;
+  background-position: right;
+  background-size:contain;
   display: grid;
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
-  color: var(--color-primary);
+  border-bottom:2px solid red;
+  
+  color: var(--color-light);
   text-align: center;
 }
 header h1 {
+  font-family:var(--font-family-secondary);
   display: inline-grid;
   min-height: var(--logomark-height);
   padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
+
   place-content: center;
 }
 header h2 {
@@ -631,14 +634,12 @@ nav ul li {
 
 .skip-link {
   position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
+ 
+  right:0;
   background-color: var(--color-secondary);
   color: #fff;
   font-size: 1.125rem;
-  overflow: hidden;
+  
 }
 .skip-link:focus {
   position: fixed;
